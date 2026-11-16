@@ -1,0 +1,9 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  // Agent principal par defaut pour les nouvelles sessions
+  "default_agent": "mentor",
+  // Charge les regles du kit pedagogique en complement de AGENTS.md
+  "instructions": [
+    ".agents/rules/*.md"
+  ]
+}
