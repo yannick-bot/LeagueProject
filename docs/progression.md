@@ -7,8 +7,8 @@
 - **Phase** : cadrage complet et modélisation terminés, passage à la première fonctionnalité (`parcours-fonctionnalite`).
 - **Jalon en cours** : V1.0 - Catalogue public en lecture seule (champions, objets, synchronisation Data Dragon).
 - **Fonctionnalité en cours** : 0 (Socle technique, issue `#1`).
-- **Étape du parcours** : `parcours-fonctionnalite`, étape 3-5 (journal d'erreurs `E-001`, création de branche `chore/1-socle-technique`, concepts F0).
-- **Prochaine étape** : rédiger `E-001` dans `learnt/journal-erreurs.md`, créer la branche `chore/1-socle-technique`, puis dérouler le socle technique (PostgreSQL/Liquibase, nettoyage du squelette, Apidog, coquille Angular, CI).
+- **Étape du parcours** : `parcours-fonctionnalite`, étape 6/9 pour F0 (coquille Angular générée, mise en place de la CI GitHub Actions).
+- **Prochaine étape** : commiter la coquille Angular (`chore(ui):`), configurer le workflow CI GitHub Actions (backend + frontend), puis ouvrir la PR de la fonctionnalité 0 (`closes #1`).
 - **Décidé le 2026-11-15** : monorepo `backend/` + `frontend/` + `api/`, contrat design-first dans Apidog, front Angular généré par le mentor écran par écran (décisions n°9 à n°12 de `00-cadrage.md`).
 
 ## Documents du projet

@@ -1,0 +1,15 @@
+.error-banner {
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--mat-sys-error);
+  background-color: var(--mat-sys-error-container);
+  color: var(--mat-sys-on-error-container);
+}
+
+.error-detail {
+  margin: 0.5rem 0 0;
+}
+
+.invalid-params {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}

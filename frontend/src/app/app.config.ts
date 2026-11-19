@@ -1,10 +1,16 @@
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { environment } from '../environments/environment';
+import { provideApi } from './api';
 import { routes } from './app.routes';
+import { problemDetailInterceptor } from './core/interceptors/problem-detail.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes)
-  ]
+    provideRouter(routes),
+    provideHttpClient(withInterceptors([problemDetailInterceptor])),
+    provideApi(environment.apiBaseUrl),
+  ],
 };

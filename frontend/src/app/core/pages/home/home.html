@@ -1,0 +1,20 @@
+<section class="home-shell">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>LeaguePlatform UI</mat-card-title>
+      <mat-card-subtitle>Coquille applicative (F0 - Socle technique)</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Interface generee ecran par ecran a partir du contrat <code>api/openapi.yaml</code>.
+        Aucun ecran metier n'est encore genere a cette etape.
+      </p>
+      <div class="env-summary">
+        <mat-chip-set aria-label="Configuration active">
+          <mat-chip>Mode : {{ env.mode }}</mat-chip>
+          <mat-chip>API : {{ env.apiBaseUrl || 'non definie' }}</mat-chip>
+        </mat-chip-set>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>
