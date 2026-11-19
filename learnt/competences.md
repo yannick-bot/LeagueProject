@@ -25,10 +25,10 @@
 | Racine d'agrégat | Fondateur | Découvert | avant le 2026-11-06 | Expliqué | [fiche](concepts/aggregate-root.md) |
 | Relation avec doublons (`List` vs `Set`) | Fondateur | Découvert | avant le 2026-11-06 | Expliqué | [fiche](concepts/relation-avec-doublons-list-vs-set.md) |
 | Attributs dynamiques (`Map` en `@ElementCollection`) | Découvrable | Découvert | avant le 2026-11-06 | Expliqué | [fiche](concepts/element-collection-map-attributs-dynamiques.md) |
-| `ProblemDetail` (RFC 9457) | Découvrable | Découvert | avant le 2026-11-06 | Expliqué | [fiche](concepts/problemdetail-rfc-9457.md) |
-| BOM Maven | Découvrable | Découvert | avant le 2026-11-06 | Expliqué | [fiche](concepts/bom-maven-gestion-des-versions.md) |
-| `ddl-auto=validate` et migrations | Découvrable | Découvert | avant le 2026-11-06 | Expliqué | [fiche](concepts/ddl-auto-validate-et-migrations.md) |
-| Testcontainers (3 briques) | Découvrable | Découvert | avant le 2026-11-06 | Expliqué | [fiche](concepts/testcontainers-tests-integration.md) |
+| `ProblemDetail` (RFC 9457) | Découvrable | Compris | 2026-11-17 | Reformulation validée | [fiche](concepts/problemdetail-rfc-9457.md) |
+| BOM Maven | Découvrable | Compris | 2026-11-19 | Reformulation validée | [fiche](concepts/bom-maven-gestion-des-versions.md) |
+| `ddl-auto=validate` et migrations | Découvrable | Compris | 2026-11-18 | Reformulation validée | [fiche](concepts/ddl-auto-validate-et-migrations.md) |
+| Testcontainers (3 briques) | Découvrable | Compris | 2026-11-19 | Reformulation validée | [fiche](concepts/testcontainers-tests-integration.md) |
 
 ## Notions fragiles (à retravailler en rappel actif)
 

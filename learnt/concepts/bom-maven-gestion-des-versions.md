@@ -45,7 +45,7 @@ Sans parent Spring Boot, on importe le BOM dans `<dependencyManagement>` avec `<
 
 ## 7. Ma reformulation validée
 
-> À écrire : reformule ce concept avec tes mots (rappel actif).
+> Un BOM Maven est un catalogue central des dépendances gérées et de leurs versions compatibles testées ensemble pour une version donnée du parent (comme Spring Boot). Les dépendances présentes dans le BOM n'ont pas besoin de `<version>`, alors qu'une dépendance externe qui n'y figure pas (comme Springdoc) doit préciser sa `<version>` explicitement.
 
 ## 8. Rencontré dans
 
