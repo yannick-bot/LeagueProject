@@ -1,0 +1,28 @@
+@if (error(); as problem) {
+  <mat-card class="error-banner" role="alert">
+    <mat-card-header>
+      <mat-icon mat-card-avatar aria-hidden="true">error_outline</mat-icon>
+      <mat-card-title>{{ problem.title }} (HTTP {{ problem.status }})</mat-card-title>
+      @if (problem.instance) {
+        <mat-card-subtitle>{{ problem.instance }}</mat-card-subtitle>
+      }
+    </mat-card-header>
+
+    <mat-card-content>
+      <p class="error-detail">{{ problem.detail }}</p>
+      @if (problem.invalidParams?.length) {
+        <ul class="invalid-params">
+          @for (item of problem.invalidParams; track item.field) {
+            <li>
+              <strong>{{ item.field }}</strong> : {{ item.message }}
+            </li>
+          }
+        </ul>
+      }
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-button type="button" (click)="dismiss()">Fermer</button>
+    </mat-card-actions>
+  </mat-card>
+}

@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" class="shell-toolbar">
+  <a mat-button routerLink="/" class="brand-link">
+    <mat-icon aria-hidden="true">shield</mat-icon>
+    <span>LeaguePlatform</span>
+  </a>
+
+  <nav class="shell-nav" aria-label="Navigation principale">
+    <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+      Accueil
+    </a>
+  </nav>
+
+  <span class="spacer"></span>
+  <span class="env-badge" [class.env-mock]="mode === 'mock'">{{ mode.toUpperCase() }}</span>
+</mat-toolbar>
+
+<main class="shell-main">
+  <app-error-banner />
+  <router-outlet />
+</main>

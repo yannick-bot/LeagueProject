@@ -6,9 +6,9 @@
 
 - **Phase** : cadrage complet et modélisation terminés, passage à la première fonctionnalité (`parcours-fonctionnalite`).
 - **Jalon en cours** : V1.0 - Catalogue public en lecture seule (champions, objets, synchronisation Data Dragon).
-- **Fonctionnalité en cours** : 0 (Socle technique), à démarrer (étape 1 de `parcours-fonctionnalite`).
-- **Étape du parcours** : `parcours-fonctionnalite`, étape 2 (user story et coquille d'écran pour la fonctionnalité 0).
-- **Prochaine étape** : rédiger la user story, la section coquille/écran et les critères d'acceptation de la fonctionnalité 0, puis initialiser Git/GitHub et créer l'issue.
+- **Fonctionnalité en cours** : 0 (Socle technique, issue `#1`).
+- **Étape du parcours** : `parcours-fonctionnalite`, étape 9 pour F0 (workflow CI écrit et vérifié, prêt pour le commit, le push et l'ouverture de la PR).
+- **Prochaine étape** : commiter le workflow CI (`ci:`), pousser la branche `chore/1-socle-technique`, ouvrir la PR (`closes #1`) et vérifier que la CI est verte avant la revue de code.
 - **Décidé le 2026-11-15** : monorepo `backend/` + `frontend/` + `api/`, contrat design-first dans Apidog, front Angular généré par le mentor écran par écran (décisions n°9 à n°12 de `00-cadrage.md`).
 
 ## Documents du projet
@@ -30,7 +30,7 @@ Les documents ont été créés avant le kit et gardent leurs noms d'origine :
 
 | # | Fonctionnalité | Issue | État |
 | :--- | :--- | :--- | :--- |
-| 0 | Socle technique : monorepo (`backend/` déplacé, `frontend/`, `api/`), dépôt Git et GitHub, nettoyage du squelette, PostgreSQL (Docker Compose), Liquibase, projet Apidog, coquille Angular (générée par le mentor), CI backend et front | | à faire |
+| 0 | Socle technique : monorepo (`backend/` déplacé, `frontend/`, `api/`), dépôt Git et GitHub, nettoyage du squelette, PostgreSQL (Docker Compose), Liquibase, projet Apidog, coquille Angular (générée par le mentor), CI backend et front | #1 | en cours |
 | 1 | Import des champions depuis les JSON locaux au démarrage (si la base est vide) | | à faire |
 | 2 | `GET /api/v1/champions/{riotId}` : détail d'un champion | | à faire |
 | 3 | `GET /api/v1/champions` : liste paginée, recherche, filtre par tag, tri | | à faire |
@@ -46,11 +46,10 @@ Les documents ont été créés avant le kit et gardent leurs noms d'origine :
    - `ApiResponse` (un wrapper `success/message/data`) contredit le contrat (`PagedResponse` et `ProblemDetail`) ;
    - `GlobalExceptionHandler` renvoie une `Map` en 500 et expose `ex.getMessage()` : format non standard et fuite d'information ;
    - il manque la datasource, Liquibase, Docker Compose, Springdoc et le dossier `src/main/resources/data/`.
-2. **Le projet n'est pas encore un dépôt Git** : à initialiser en premier (rule `pratiques-pro`). Le log de crash de la JVM `hs_err_pid1520.log` (manque de mémoire, 2026-11-02) est à supprimer et à exclure via `.gitignore`.
-3. **Modélisation métier légère** : la V1.0 est un catalogue en lecture seule, avec peu de règles de gestion, d'invariants et d'états. La V1.1 (Builds : 6 objets maximum, un rôle visé, builds privés) mérite un passage par `parcours-modeliser-metier` avant son démarrage.
-4. **Notions à reformuler** (voir la grille) : 8 notions au niveau Découvert à reformuler au moment où elles serviront dans le code.
-5. **Carnet NotebookLM central** `"Concepts Backend Java"` : pas encore créé ni alimenté (vérifié le 2026-11-17). Première synchronisation à faire par l'archiviste (14 fiches, grille, cadrage).
-6. **Contrat à porter dans Apidog** : `03-contrat-api-v1.md` (5 endpoints) est à ressaisir dans Apidog, endpoint par endpoint, au fil des fonctionnalités, puis à exporter dans `api/openapi.yaml`. Chaque user story devra aussi recevoir sa section "Écran".
+2. **Modélisation métier légère** : la V1.0 est un catalogue en lecture seule, avec peu de règles de gestion, d'invariants et d'états. La V1.1 (Builds : 6 objets maximum, un rôle visé, builds privés) mérite un passage par `parcours-modeliser-metier` avant son démarrage.
+3. **Notions à reformuler** (voir la grille) : 8 notions au niveau Découvert à reformuler au moment où elles serviront dans le code.
+4. **Carnet NotebookLM central** `"Concepts Backend Java"` : pas encore créé ni alimenté (vérifié le 2026-11-17). Première synchronisation à faire par l'archiviste (14 fiches, grille, cadrage).
+5. **Contrat à porter dans Apidog** : `03-contrat-api-v1.md` (5 endpoints) est à ressaisir dans Apidog, endpoint par endpoint, au fil des fonctionnalités, puis à exporter dans `api/openapi.yaml`. Chaque user story devra aussi recevoir sa section "Écran".
 
 ## Historique des séances
 

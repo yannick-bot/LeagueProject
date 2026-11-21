@@ -1,0 +1,41 @@
+.shell-toolbar {
+  gap: 0.75rem;
+}
+
+.brand-link {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.shell-nav {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.active-link {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.env-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background-color: var(--mat-sys-secondary-container);
+  color: var(--mat-sys-on-secondary-container);
+
+  &.env-mock {
+    background-color: var(--mat-sys-tertiary-container);
+    color: var(--mat-sys-on-tertiary-container);
+  }
+}
+
+.shell-main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}

@@ -67,7 +67,7 @@ class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
 ## 7. Ma reformulation validée
 
-> À écrire : reformule ce concept avec tes mots (rappel actif).
+> `ProblemDetail` permet de standardiser le format de réponse des API en cas d'erreur, ce qui évite aux clients de devoir s'adapter à plusieurs contrats d'erreur. En cas d'erreur `500`, il faut renvoyer un message générique dans `detail` pour éviter les fuites d'information (noms de bases de données, tables, etc.), tout en loggant l'erreur complète côté serveur.
 
 ## 8. Rencontré dans
 
