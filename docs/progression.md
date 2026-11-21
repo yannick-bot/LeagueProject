@@ -4,11 +4,11 @@
 
 ## Où on en est
 
-- **Phase** : cadrage complet et modélisation terminés, passage à la première fonctionnalité (`parcours-fonctionnalite`).
+- **Phase** : F0 terminée et mergée (`PR #2`), démarrage de la fonctionnalité 1 (`parcours-fonctionnalite`).
 - **Jalon en cours** : V1.0 - Catalogue public en lecture seule (champions, objets, synchronisation Data Dragon).
-- **Fonctionnalité en cours** : 0 (Socle technique, issue `#1`).
-- **Étape du parcours** : `parcours-fonctionnalite`, étape 9 pour F0 (workflow CI écrit et vérifié, prêt pour le commit, le push et l'ouverture de la PR).
-- **Prochaine étape** : commiter le workflow CI (`ci:`), pousser la branche `chore/1-socle-technique`, ouvrir la PR (`closes #1`) et vérifier que la CI est verte avant la revue de code.
+- **Fonctionnalité en cours** : 1 (Import des champions depuis les JSON locaux au démarrage) - en cours.
+- **Étape du parcours** : `parcours-fonctionnalite`, étape 2 pour F1 (entretien avec l'expert métier pour la user story, la section Écran et les critères d'acceptation).
+- **Prochaine étape** : rédiger et créer l'issue GitHub pour F1, dresser la carte locale des concepts (avec les 4 notions `Découvert` à reformuler) et créer la branche dédiée.
 - **Décidé le 2026-11-15** : monorepo `backend/` + `frontend/` + `api/`, contrat design-first dans Apidog, front Angular généré par le mentor écran par écran (décisions n°9 à n°12 de `00-cadrage.md`).
 
 ## Documents du projet
@@ -30,8 +30,8 @@ Les documents ont été créés avant le kit et gardent leurs noms d'origine :
 
 | # | Fonctionnalité | Issue | État |
 | :--- | :--- | :--- | :--- |
-| 0 | Socle technique : monorepo (`backend/` déplacé, `frontend/`, `api/`), dépôt Git et GitHub, nettoyage du squelette, PostgreSQL (Docker Compose), Liquibase, projet Apidog, coquille Angular (générée par le mentor), CI backend et front | #1 | en cours |
-| 1 | Import des champions depuis les JSON locaux au démarrage (si la base est vide) | | à faire |
+| 0 | Socle technique : monorepo (`backend/` déplacé, `frontend/`, `api/`), dépôt Git et GitHub, nettoyage du squelette, PostgreSQL (Docker Compose), Liquibase, projet Apidog, coquille Angular (générée par le mentor), CI backend et front | #1 | fait (PR #2) |
+| 1 | Import des champions depuis les JSON locaux au démarrage (si la base est vide) | | en cours |
 | 2 | `GET /api/v1/champions/{riotId}` : détail d'un champion | | à faire |
 | 3 | `GET /api/v1/champions` : liste paginée, recherche, filtre par tag, tri | | à faire |
 | 4 | Import des objets depuis les JSON locaux (recettes, stats, tags) | | à faire |
@@ -41,14 +41,10 @@ Les documents ont été créés avant le kit et gardent leurs noms d'origine :
 
 ## Points ouverts
 
-1. **Squelette à nettoyer** (fonctionnalité 0) :
-   - le package est `com.example.demo` au lieu de `com.leagueplatform`, et `spring.application.name=demo` ;
-   - `ApiResponse` (un wrapper `success/message/data`) contredit le contrat (`PagedResponse` et `ProblemDetail`) ;
-   - `GlobalExceptionHandler` renvoie une `Map` en 500 et expose `ex.getMessage()` : format non standard et fuite d'information ;
-   - il manque la datasource, Liquibase, Docker Compose, Springdoc et le dossier `src/main/resources/data/`.
+1. ~~**Squelette à nettoyer** (fonctionnalité 0)~~ : fait et mergé en PR #2 (`com.leagueplatform`, `ProblemDetail` RFC 9457, PostgreSQL + Docker Compose, Liquibase, Springdoc 3.2.0, `data/.gitkeep`, coquille Angular, CI verte).
 2. **Modélisation métier légère** : la V1.0 est un catalogue en lecture seule, avec peu de règles de gestion, d'invariants et d'états. La V1.1 (Builds : 6 objets maximum, un rôle visé, builds privés) mérite un passage par `parcours-modeliser-metier` avant son démarrage.
-3. **Notions à reformuler** (voir la grille) : 8 notions au niveau Découvert à reformuler au moment où elles serviront dans le code.
-4. **Carnet NotebookLM central** `"Concepts Backend Java"` : pas encore créé ni alimenté (vérifié le 2026-11-17). Première synchronisation à faire par l'archiviste (14 fiches, grille, cadrage).
+3. **Notions à reformuler** (voir la grille) : 4 notions au niveau Découvert restent à reformuler au moment où elles serviront dans le code (F1/F4). En plus, lors du rappel actif du 2026-11-22, `1NF / @Enumerated(EnumType.STRING)` s'est révélé légèrement fragile (confusion 1NF vs unicité) : à consolider rapidement en F1.
+4. **Carnet NotebookLM central** `"Concepts Backend Java"` : créé et synchronisé le 2026-11-21 (17 sources). Prochaine synchro en clôture de F1.
 5. **Contrat à porter dans Apidog** : `03-contrat-api-v1.md` (5 endpoints) est à ressaisir dans Apidog, endpoint par endpoint, au fil des fonctionnalités, puis à exporter dans `api/openapi.yaml`. Chaque user story devra aussi recevoir sa section "Écran".
 
 ## Historique des séances
@@ -60,3 +56,4 @@ Les documents ont été créés avant le kit et gardent leurs noms d'origine :
 | 2026-11-15 | Ajout du front généré au kit : monorepo, Apidog (design-first, mock), Angular écran par écran, section "Écran" des user stories | Mock et API-First, design-first vs code-first |
 | 2026-11-16 | Écriture d'un second kit, "contribution open source" (`kit-open-source/.agents/`, à déplacer hors du projet). Mise à jour de ce kit : bibliothèque de cours NotebookLM (`learnt/bibliotheque.md`, lecture seule, source secondaire), retrait de la skill `backend-dev-guidelines` (écrite pour Node.js) | Sources de vérité : documentation officielle avant les cours |
 | 2026-11-17 | Reprise de session : rappel actif (3/3), validation des reformulations agnostiques (upsert, codes HTTP), alignement de `learnt/bibliotheque.md` avec NotebookLM, cadrage complété (outils du Student Pack et carte des connaissances) | Upsert par clé métier, codes HTTP (`400`/`404`/`200`), Package by Feature |
+| 2026-11-18 au 2026-11-21 | F0 (Socle technique, issue #1, PR #2 mergée) : monorepo, PostgreSQL Docker Compose, Liquibase, `ProblemDetail` + `ResponseEntityExceptionHandler`, Springdoc, Testcontainers, Apidog initial, coquille Angular 22, CI GitHub Actions (et débogage `npm ci` / `.npmrc`, entrée `E-002`) | `ProblemDetail`, BOM Maven, `ddl-auto=validate`, Testcontainers, `npm ci` vs `npm install`, reproductibilité CI |
