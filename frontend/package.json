@@ -29,6 +29,7 @@
     "@angular/cli": "^22.3.0",
     "@angular/compiler-cli": "^22.3.0",
     "@openapitools/openapi-generator-cli": "^2.42.2",
+    "@types/node": "^24.19.2",
     "jsdom": "^31.0.0",
     "prettier": "^3.8.1",
     "typescript": "~6.0.2",
