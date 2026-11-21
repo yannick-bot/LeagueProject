@@ -50,7 +50,7 @@ class OrderRepositoryIT {
 
 ## 7. Ma reformulation validée
 
-> À écrire : reformule ce concept avec tes mots (rappel actif).
+> Avec Testcontainers dans Spring Boot, trois briques collaborent : `testcontainers-postgresql` fournit et instancie le conteneur à partir d'une image PostgreSQL ; `testcontainers-junit-jupiter` (`@Testcontainers`, `@Container`) gère le cycle de vie JUnit en démarrant et arrêtant automatiquement le conteneur ; `spring-boot-testcontainers` (`@ServiceConnection`) câble automatiquement les propriétés de connexion Spring (URL sur port aléatoire, identifiants) sur ce conteneur sans configuration manuelle.
 
 ## 8. Rencontré dans
 

@@ -40,7 +40,7 @@ Si l'entité `Order` déclare un champ `status` absent de la table `orders`, l'a
 
 ## 7. Ma reformulation validée
 
-> À écrire : reformule ce concept avec tes mots (rappel actif).
+> On choisit `ddl-auto=validate` plutôt que `update` pour garder une seule source de vérité : Liquibase gère la création et la modification du schéma, tandis qu'Hibernate se contente de vérifier au démarrage que les entités correspondent aux tables sans jamais modifier la base. Règle clé : on ne modifie jamais un changeset déjà appliqué, sinon son checksum change et Liquibase bloque au démarrage ; toute évolution passe par un nouveau changeset.
 
 ## 8. Rencontré dans
 
