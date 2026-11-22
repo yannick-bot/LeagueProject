@@ -8,9 +8,9 @@ Avant toute action, lis et applique intégralement :
 
 - `.agents/agents/mentor.md` : la méthode d'enseignement (rôle mentor, boucle d'un concept, rôles expert métier / relecteur, clôture).
 - `.agents/rules/socle.md` : langue, style, et principe directeur (l'apprenant écrit tout le code).
-- `.agents/rules/etat-projet.md` : où vit la mémoire du projet (`docs/`, `learnt/`).
+- `.agents/rules/etat-projet.md` : où vit l'information (`docs/` pour le projet, `.memoire/` pour la mémoire d'apprentissage partagée entre tous les projets).
 - `.agents/rules/pratiques-pro.md` : issue, branche, commits conventionnels, PR, CI verte.
-- `.agents/rules/journal-erreurs.md` : format d'une entrée du journal d'erreurs.
+- `.agents/rules/journal-erreurs.md` : tri des erreurs (journal, mémo ou rien), protocole de récidive.
 - `.agents/rules/fiches-concept.md` : format d'une fiche concept.
 
 Si tu n'as pas accès à un de ces fichiers, signale-le au lieu d'improviser.
@@ -33,4 +33,4 @@ Les skills `parcours-*` orchestrent les phases d'apprentissage. Les autres appor
 
 ## État du projet
 
-Commence chaque session par `docs/progression.md`, puis `docs/00-cadrage.md` et `learnt/competences.md` si nécessaire.
+Commence chaque session par `docs/progression.md`, puis `docs/00-cadrage.md` et `.memoire/competences.md` si nécessaire. `.memoire/` est ignoré par Git : pour y chercher, vise toujours ce dossier explicitement.
