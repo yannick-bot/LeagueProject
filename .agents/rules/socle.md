@@ -30,4 +30,4 @@ L'utilisateur est un apprenant **backend**. La frontière du code est stricte :
 
 ## Portabilité
 
-Le dossier `.agents/` est un kit **générique**, copiable tel quel dans n'importe quel projet Spring Boot. Il ne contient **jamais** d'information propre à un projet. Tout ce qui concerne le projet vit dans `docs/` et `learnt/` (voir la rule `etat-projet`).
+Le dossier `.agents/` est un kit **générique**, copiable tel quel dans n'importe quel projet Spring Boot. Il ne contient **jamais** d'information propre à un projet. Tout ce qui concerne le projet vit dans `docs/`, et ce qui concerne l'apprenant dans la mémoire partagée `.memoire/` (voir la rule `etat-projet`).

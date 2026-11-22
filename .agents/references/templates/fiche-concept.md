@@ -1,6 +1,8 @@
 # <Nom du concept>
 
-> Fiche agnostique : aucun nom de classe, d'entité ou d'URL d'un projet dans les sections 1 à 7. Exemples dans un domaine neutre (`Order`, `Customer`, `Product`...).
+**Domaine** : technique | contribution
+
+> Fiche agnostique : aucun nom de projet, de module, de classe ou d'URL d'un projet dans les sections 1 à 7. Exemples dans un domaine neutre (`Order`, `Customer`, `Product`, un dépôt `exemple/app`...).
 
 ## 1. Le concept en une phrase
 
@@ -30,4 +32,4 @@ Sans lui, que se passe-t-il ?
 
 ## 8. Rencontré dans
 
-- Projet `<nom>` : fonctionnalité `<...>` (PR #..), erreur `E-0xx`
+- Projet `<nom>` : fonctionnalité ou ticket `<...>` (PR #..), erreur `E-0xx`

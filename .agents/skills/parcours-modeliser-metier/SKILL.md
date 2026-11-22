@@ -56,5 +56,5 @@ Tables, clés primaires et clés métier uniques, clés étrangères, index, con
 ## 9. Production et clôture
 
 - Tu rédiges `docs/01-modele-metier.md` à partir de tout ce qui a été décidé. L'apprenant le relit et le valide.
-- Mets à jour la carte des connaissances (`docs/00-cadrage.md`) et `learnt/competences.md` si des notions ont été comprises (reformulation validée).
+- Mets à jour la carte des connaissances (`docs/00-cadrage.md`) et `.memoire/competences.md` si des notions ont été comprises (reformulation validée).
 - Métacognition, récapitulatif, puis enchaîne sur `parcours-fonctionnalite` avec la première fonctionnalité du jalon.

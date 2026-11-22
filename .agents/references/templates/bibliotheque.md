@@ -1,6 +1,6 @@
 # Bibliothèque de cours (NotebookLM, lecture seule)
 
-> Les carnets NotebookLM de cours de l'apprenant. L'archiviste les consulte au diagnostic, pour les rappels et pour les quiz, mais n'y écrit **jamais**. Règles : `.agents/agents/archiviste.md`, section "La bibliothèque de cours". Copié dans `learnt/bibliotheque.md`.
+> Les carnets NotebookLM de cours de l'apprenant. L'archiviste les consulte au diagnostic, pour les rappels et pour les quiz, mais n'y écrit **jamais**. Règles : `.agents/agents/archiviste.md`, section "La bibliothèque de cours". Copié dans `.memoire/bibliotheque.md` (mémoire partagée entre tous les projets).
 
 ## Une source secondaire
 

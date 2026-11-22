@@ -22,7 +22,7 @@ L'apprenant rédige et crée lui-même l'issue GitHub.
 
 ## 3. Carte locale des concepts
 
-Quels concepts cette fonctionnalité mobilise-t-elle ? Pour chacun : diagnostic (grille, puis `archiviste` si besoin), classement fondateur ou découvrable, ordre. **Une seule difficulté nouvelle à la fois** : si la fonctionnalité en introduit trop, propose de la découper.
+Quels concepts cette fonctionnalité mobilise-t-elle ? Pour chacun : diagnostic (grille `.memoire/competences.md`, où une notion **fragile** demande un rappel actif avant d'avancer, puis `archiviste` si besoin), classement fondateur ou découvrable, ordre. **Une seule difficulté nouvelle à la fois** : si la fonctionnalité en introduit trop, propose de la découper.
 
 Si un **outil** (GitHub Student Pack, ou une nouvelle fonctionnalité d'Apidog) devient utile à cette étape du projet, c'est le moment de l'introduire, comme un concept découvrable (méthode "Guider un outil" du mentor).
 
@@ -55,7 +55,9 @@ Cycle TDD (skill `tdd`) :
 
 Les concepts arrivent **au moment où on en a besoin**, avec la boucle de concept du mentor (fondateur : concept d'abord ; découvrable : essai d'abord). Aide selon le niveau de la grille, indices par paliers, répétition délibérée (une variation à chaque répétition).
 
-Toute erreur qui demande réflexion passe par `parcours-erreur`.
+À chaque tâche confiée (configurer, implémenter), donne d'abord la **piste de recherche** dosée selon la grille (mentor, "Apprendre à chercher").
+
+Toute erreur signalée par un outil (démarrage, migration, test rouge, conteneur), y compris de syntaxe ou de configuration, passe par `parcours-erreur`. Quand l'apprenant te demande de **vérifier** une tâche qu'il a faite, relis-la, laisse-le corriger, puis fais le **tri** des points corrigés (rule `journal-erreurs`).
 
 ## 8. Bascule sur le vrai backend
 
@@ -71,14 +73,15 @@ Commits conventionnels au fil de l'eau. L'apprenant ouvre **une seule PR** conte
 
 ## 10. Revue de code
 
-Rôle **Relecteur**, sur le backend et le contrat (pas sur le front généré). Commence par les forces. Puis, pour chaque point faible : une question d'abord ("que se passe-t-il si...?"), l'explication du principe ensuite. Points d'attention : séparation des couches, invariants protégés, transactions, N+1, validation, gestion d'erreurs, sécurité, tests (cas d'erreur inclus), conformité au contrat, lisibilité. Skill d'appui : `code-reviewer`. L'apprenant corrige lui-même.
+Rôle **Relecteur**, sur le backend et le contrat (pas sur le front généré). Commence par les forces. Puis, pour chaque point faible : une question d'abord ("que se passe-t-il si...?"), l'explication du principe ensuite. Points d'attention : séparation des couches, invariants protégés, transactions, N+1, validation, gestion d'erreurs, sécurité, tests (cas d'erreur inclus), conformité au contrat, lisibilité. Skill d'appui : `code-reviewer`. L'apprenant corrige lui-même. Une fois les corrections faites, fais le **tri** des points corrigés (rule `journal-erreurs`) : journal, mémo ou rien, et protocole de récidive si un point était déjà noté.
 
 ## 11. Merge et mise à jour
 
 - L'apprenant merge et supprime la branche.
-- Mets à jour avec lui `learnt/competences.md` (une notion codée seule passe à Appliqué ; la preuve est la PR).
-- Vérifie que les nouvelles fiches concept et entrées du journal sont écrites.
-- Délègue à `archiviste` la synchronisation vers le carnet NotebookLM central (fiches, journal, grille).
+- Mets à jour avec lui `.memoire/competences.md` (une notion codée seule passe à Appliqué ; la preuve est la PR, avec le nom du projet).
+- Vérifie que les nouvelles fiches concept (`.memoire/concepts/`), entrées du journal et lignes du mémo sont écrites.
+- Rappelle-lui de commiter et de pousser le dépôt `.memoire/` (il tape les commandes).
+- Délègue à `archiviste` la synchronisation vers le carnet NotebookLM central (fiches, journal, mémo, grille).
 - Mets à jour `docs/progression.md`.
 
 ## 12. Clôture

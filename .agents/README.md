@@ -1,6 +1,6 @@
 # Kit d'apprentissage guidé : backend Java / Spring Boot
 
-Kit **générique et portable** : copie le dossier `.agents/` dans n'importe quel projet, active l'agent `mentor`, et lance `parcours-demarrer-projet`. Le kit ne contient aucune information propre à un projet : tout l'état du projet vit dans `docs/` et `learnt/`.
+Kit **générique et portable** : copie le dossier `.agents/` dans n'importe quel projet, active l'agent `mentor`, et lance `parcours-demarrer-projet`. Le kit ne contient aucune information propre à un projet : l'état du projet vit dans `docs/`, et ce que l'apprenant a appris vit dans la mémoire partagée `.memoire/`.
 
 Conçu nativement pour **Antigravity** (dossier `.agents/`), et utilisable depuis d'autres outils grâce à de petits adaptateurs (voir "Utilisation selon l'outil").
 
@@ -13,7 +13,9 @@ Conçu nativement pour **Antigravity** (dossier `.agents/`), et utilisable depui
 - **API-First** : le contrat est conçu dans Apidog, exporté en OpenAPI, et l'écran tourne d'abord sur le mock avant de basculer sur le vrai backend.
 - **Le métier compte autant que la technique** : cas d'usage, règles de gestion, invariants, états, workflows, écrans pensés comme des tâches d'un acteur.
 - **Pratiques professionnelles dès le premier jour** : issue, branche, commits conventionnels, PR, CI, revue.
-- **Une mémoire entre projets** : le carnet NotebookLM central "Concepts Backend Java", et la bibliothèque de cours de l'apprenant (carnets NotebookLM en lecture seule, source secondaire).
+- **Une mémoire entre projets** : le dépôt `.memoire/` (grille unique, journal et mémo d'erreurs, fiches concept, bibliothèque de cours), commun à ce kit et au kit de contribution open source. Une erreur déjà rencontrée sur un autre projet est reconnue (protocole de récidive). Le carnet NotebookLM central "Concepts Backend Java" n'en est que le miroir.
+- **Toute erreur compte**, y compris de syntaxe et de configuration : après chaque correction, elle est triée vers le journal, le mémo ou rien.
+- **Apprendre à chercher** : à chaque tâche, une piste vers la bonne documentation, dans la bonne version, dosée selon la grille.
 
 ## Qui écrit quoi (monorepo de chaque projet)
 
@@ -23,7 +25,7 @@ Conçu nativement pour **Antigravity** (dossier `.agents/`), et utilisable depui
 | `api/openapi.yaml` : le contrat | L'apprenant, conçu dans Apidog puis exporté |
 | `frontend/` : l'interface Angular | Le mentor uniquement |
 | `docs/` : cadrage, modèle métier, progression | Le mentor, à partir des décisions prises ensemble ; l'apprenant valide |
-| `learnt/` : fiches, journal, grille | Ensemble ; les reformulations et le journal sont écrits par l'apprenant |
+| `.memoire/` (dépôt à part) : grille, journal, mémo, fiches, bibliothèque | Ensemble ; les reformulations, le journal et le mémo sont écrits par l'apprenant |
 
 ## Carte du kit
 
@@ -35,10 +37,10 @@ Conçu nativement pour **Antigravity** (dossier `.agents/`), et utilisable depui
 │   └── archiviste.md              Sous-agent d'arrière-plan : NotebookLM (synchronisation, rappel, quiz)
 ├── rules/
 │   ├── socle.md                   always_on        Garde-fou agent actif, langue, typographie, frontière du code
-│   ├── etat-projet.md             always_on        Où vit la mémoire du projet (docs/, learnt/)
+│   ├── etat-projet.md             always_on        Où vit l'information (docs/, .memoire/)
 │   ├── pratiques-pro.md           always_on        Monorepo, flux Git / GitHub professionnel
-│   ├── journal-erreurs.md         model_decision   Format du journal d'erreurs
-│   └── fiches-concept.md          glob             Format des fiches concept agnostiques
+│   ├── journal-erreurs.md         always_on        Tri des erreurs, mémo, journal, récidives (copie commune aux deux kits)
+│   └── fiches-concept.md          glob             Format des fiches concept agnostiques (copie commune aux deux kits)
 ├── skills/
 │   ├── parcours-demarrer-projet/  Cadrage : domaine, métier, périmètre, données, outils, stack, mise en place
 │   ├── parcours-modeliser-metier/ Cas d'usage, règles, invariants, états, puis DDD et BDD
@@ -53,10 +55,11 @@ Conçu nativement pour **Antigravity** (dossier `.agents/`), et utilisable depui
     ├── student-pack.md            Outils du GitHub Student Pack retenus
     ├── sources-donnees.md         Data Dragon, apilayer, Blockchair...
     ├── front-angular.md           Conventions du front généré
+    ├── sources-documentation.md   Apprendre à chercher : carte des sources (copie commune aux deux kits)
     ├── outils/
     │   └── apidog.md              Guide d'introduction progressive à Apidog
-    └── templates/                 cadrage, progression, competences, bibliotheque, fiche-concept,
-                                   entree-journal, user-story, pull-request, adr
+    └── templates/                 cadrage, progression, bibliotheque, fiche-concept,
+                                   user-story, pull-request, adr
 ```
 
 > Les workflows Antigravity (`.agents/workflows/`) étant dépréciés au profit des skills, les parcours sont écrits sous forme de skills.
@@ -83,8 +86,21 @@ user story + écran ─> concepts ─> contrat (Apidog) ─> export api/openapi.
 ```text
 backend/  frontend/  api/openapi.yaml
 docs/     progression.md, 00-cadrage.md, 01-modele-metier.md, 02-contrat-api.md, adr/
-learnt/   concepts/*.md, journal-erreurs.md, competences.md, bibliotheque.md
 ```
+
+Et, dans la mémoire partagée (un seul dépôt pour tous les projets) :
+
+```text
+.memoire/ competences.md, journal-erreurs.md, memo-erreurs.md, bibliotheque.md, concepts/*.md
+```
+
+## La mémoire partagée `.memoire/`
+
+Un dépôt Git personnel, distinct du projet, cloné à sa racine sous le nom `.memoire` et exclu via `.git/info/exclude` (jamais via le `.gitignore` du projet). Son `README.md` est le contrat : contenu, qui écrit quoi, installation, sauvegarde.
+
+- **En début de session** : `git -C .memoire pull`. **En fin de séance** : commit et push de `.memoire/` (l'apprenant tape les commandes ; un commit dans le projet n'enregistre pas la mémoire).
+- **Chercher dedans** : toujours en visant `.memoire/` explicitement. Les outils de recherche qui respectent les fichiers ignorés ne le voient pas quand on cherche dans tout le projet, sans le signaler.
+- **Copies communes** : `rules/journal-erreurs.md`, `rules/fiches-concept.md`, `references/templates/fiche-concept.md` et `references/sources-documentation.md` sont identiques dans les deux kits. Une modification se reporte dans l'autre kit.
 
 ## Utilisation selon l'outil
 
@@ -100,9 +116,10 @@ learnt/   concepts/*.md, journal-erreurs.md, competences.md, bibliotheque.md
 ## Démarrage
 
 1. Copie `.agents/` (et l'adaptateur de ton outil) à la racine du nouveau projet.
-2. Active l'agent **`mentor`**.
-3. Demande de démarrer le projet : le mentor lance `parcours-demarrer-projet`.
-4. Ensuite, à chaque session : le mentor lance `parcours-reprendre`.
+2. Clone la mémoire partagée à la racine (`git clone <url> .memoire`) et ajoute `.memoire/` à `.git/info/exclude` (voir `.memoire/README.md`).
+3. Active l'agent **`mentor`**.
+4. Demande de démarrer le projet : le mentor lance `parcours-demarrer-projet`.
+5. Ensuite, à chaque session : le mentor lance `parcours-reprendre`.
 
 ## Skills techniques disponibles
 

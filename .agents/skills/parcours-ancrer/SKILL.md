@@ -17,15 +17,16 @@ Avec l'apprenant, une question à la fois :
 
 ## 2. Vérifier la matière
 
-- Chaque concept nouveau du jalon a sa fiche dans `learnt/concepts/`, avec une reformulation validée.
-- Les erreurs significatives sont dans `learnt/journal-erreurs.md`.
-- `learnt/competences.md` est à jour.
+- Chaque concept nouveau du jalon a sa fiche dans `.memoire/concepts/`, avec une reformulation validée.
+- Les erreurs du jalon ont été triées : celles qui cachent un concept sont dans `.memoire/journal-erreurs.md`, les erreurs rapides dans `.memoire/memo-erreurs.md`, toutes avec "Où j'ai trouvé".
+- `.memoire/competences.md` est à jour (preuves de ce projet, récidives, notions fragiles).
+- Le dépôt `.memoire/` est commité et poussé (par l'apprenant).
 
 Complète ce qui manque avec l'apprenant avant de générer quoi que ce soit.
 
 ## 3. Générer les supports
 
-Demande à l'apprenant ce qu'il veut en plus du quiz et des flashcards : audio de synthèse ? carte mentale ? Puis délègue à `archiviste` : synchronisation complète, puis génération (les quiz incluent des questions symptôme → cause tirées du journal). Si un outil demande une confirmation, c'est l'apprenant qui décide.
+Demande à l'apprenant ce qu'il veut en plus du quiz et des flashcards : audio de synthèse ? carte mentale ? Puis délègue à `archiviste` : synchronisation complète, puis génération (les quiz incluent des questions symptôme, puis cause, tirées du journal ; les flashcards reprennent aussi le mémo, en priorité les erreurs qui ont récidivé). Si un outil demande une confirmation, c'est l'apprenant qui décide.
 
 ## 4. Passer le quiz
 
@@ -34,7 +35,7 @@ L'apprenant fait le quiz. Analyse les réponses fausses avec lui : idée fausse,
 ## 5. Mettre à jour la grille
 
 - Notions bien réussies au quiz **et** réutilisées sans aide dans un autre contexte : candidates au niveau Maîtrisé, via `parcours-defi`.
-- Notions ratées : elles restent à leur niveau, et sont notées pour le rappel actif.
+- Notions ratées : elles restent à leur niveau, et vont dans la section "Notions fragiles" de `.memoire/competences.md` pour le rappel actif.
 
 ## 6. Clôture
 
