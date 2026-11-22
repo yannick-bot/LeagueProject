@@ -21,8 +21,16 @@ Les documents ont été créés avant le kit et gardent leurs noms d'origine :
 | Référence de la source de données | [01-data-dragon.md](01-data-dragon.md) |
 | Modèle métier, DDD et BDD | [02-modele-domaine-et-bdd.md](02-modele-domaine-et-bdd.md) |
 | Contrat d'API | [03-contrat-api-v1.md](03-contrat-api-v1.md) (version de conception) ; à terme, `api/openapi.yaml` exporté depuis Apidog fait foi |
-| Grille de compétences | [../learnt/competences.md](../learnt/competences.md) |
-| Journal d'erreurs | [../learnt/journal-erreurs.md](../learnt/journal-erreurs.md) |
+
+La mémoire d'apprentissage (grille, journal et mémo d'erreurs, fiches concept, bibliothèque de cours) n'est plus dans ce dépôt : elle vit dans la **mémoire partagée** `.memoire/`, dépôt Git à part, commun à tous les projets, cloné à la racine et exclu via `.git/info/exclude` (rule `etat-projet`). L'ancien dossier `learnt/` y a été migré le 2026-11-22.
+
+| Rôle dans le kit | Fichier de la mémoire partagée |
+| :--- | :--- |
+| Grille de compétences | `.memoire/competences.md` |
+| Journal d'erreurs | `.memoire/journal-erreurs.md` |
+| Mémo d'erreurs (syntaxe, configuration) | `.memoire/memo-erreurs.md` |
+| Fiches concept | `.memoire/concepts/` |
+| Bibliothèque de cours | `.memoire/bibliotheque.md` |
 
 ## Fonctionnalités du jalon V1.0
 
@@ -57,3 +65,4 @@ Les documents ont été créés avant le kit et gardent leurs noms d'origine :
 | 2026-11-16 | Écriture d'un second kit, "contribution open source" (`kit-open-source/.agents/`, à déplacer hors du projet). Mise à jour de ce kit : bibliothèque de cours NotebookLM (`learnt/bibliotheque.md`, lecture seule, source secondaire), retrait de la skill `backend-dev-guidelines` (écrite pour Node.js) | Sources de vérité : documentation officielle avant les cours |
 | 2026-11-17 | Reprise de session : rappel actif (3/3), validation des reformulations agnostiques (upsert, codes HTTP), alignement de `learnt/bibliotheque.md` avec NotebookLM, cadrage complété (outils du Student Pack et carte des connaissances) | Upsert par clé métier, codes HTTP (`400`/`404`/`200`), Package by Feature |
 | 2026-11-18 au 2026-11-21 | F0 (Socle technique, issue #1, PR #2 mergée) : monorepo, PostgreSQL Docker Compose, Liquibase, `ProblemDetail` + `ResponseEntityExceptionHandler`, Springdoc, Testcontainers, Apidog initial, coquille Angular 22, CI GitHub Actions (et débogage `npm ci` / `.npmrc`, entrée `E-002`) | `ProblemDetail`, BOM Maven, `ddl-auto=validate`, Testcontainers, `npm ci` vs `npm install`, reproductibilité CI |
+| 2026-11-22 | Mémoire partagée `.memoire/` (dépôt à part, commun aux deux kits) : tri des erreurs (journal, mémo ou rien), protocole de récidive, "apprendre à chercher" (carte des sources), mise à jour des deux kits, migration de `learnt/` (14 fiches, grille au format unique, E-001 et E-002, bibliothèque) | Mémo et journal d'erreurs, récidive, juger une source |

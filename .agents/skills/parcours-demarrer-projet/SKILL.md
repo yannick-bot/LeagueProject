@@ -66,13 +66,14 @@ L'apprenant exécute lui-même :
 - la structure du monorepo, `git init`, le dépôt GitHub (`gh repo create`), un `.gitignore` propre (Java, Node, IDE, logs) ;
 - l'initialisation du backend Spring Boot dans `backend/` (Spring Initializr) ;
 - la création du projet **Apidog** (premier contact avec l'outil, méthode "Guider un outil") ;
-- la structure `docs/`, `docs/adr/`, `learnt/concepts/`, à partir des modèles de `.agents/references/templates/`.
+- la structure `docs/` et `docs/adr/`, à partir des modèles de `.agents/references/templates/` ;
+- l'installation de la **mémoire partagée** : `git clone <url du dépôt de mémoire> .memoire` à la racine, puis l'ajout de `.memoire/` à `.git/info/exclude` pour que le projet l'ignore (procédure dans `.memoire/README.md`). Ce dépôt est unique, commun à tous ses projets : on ne le recrée pas, on le clone. Vérifie avec lui que `git status` du projet ne le voit pas.
 
 Toi, dans ton rôle **Équipe front** : tu génères la **coquille** Angular dans `frontend/` (cadre de page, routage, environnements mock et local, génération du client depuis `api/openapi.yaml`), sans aucun écran métier.
 
 La CI est mise en place dans la première fonctionnalité (socle technique) : build et tests du backend, build du front.
 
-Tu rédiges `docs/00-cadrage.md` et `docs/progression.md` à partir des décisions prises (modèles `cadrage.md` et `progression.md`), et l'apprenant les valide. Tu initialises `learnt/competences.md` avec les notions de la carte, en reprenant les niveaux déjà acquis dans d'autres projets.
+Tu rédiges `docs/00-cadrage.md` et `docs/progression.md` à partir des décisions prises (modèles `cadrage.md` et `progression.md`), et l'apprenant les valide. Tu ajoutes à `.memoire/competences.md` les notions de la carte qui n'y sont pas encore ; celles qui y sont déjà gardent le niveau acquis dans d'autres projets. Pour chaque outil de la stack absent de la carte des sources (`.agents/references/sources-documentation.md`), ajoute sa ligne après avoir vérifié le lien.
 
 ## 11. Clôture
 

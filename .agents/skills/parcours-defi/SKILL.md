@@ -9,7 +9,7 @@ Le niveau **Maîtrisé** n'a de valeur que s'il est difficile à obtenir. En ent
 
 ## 1. Vérifier l'éligibilité
 
-La notion doit être au niveau **Appliqué** dans `learnt/competences.md`, **et** avoir été réutilisée dans un contexte différent (autre fonctionnalité ou autre projet). Sinon, explique ce qui manque et reporte le défi.
+La notion doit être au niveau **Appliqué** dans `.memoire/competences.md`, sans être marquée fragile, **et** avoir été réutilisée dans un contexte différent (autre fonctionnalité ou autre projet). Sinon, explique ce qui manque et reporte le défi.
 
 ## 2. Choisir le type de défi
 
@@ -27,9 +27,9 @@ Selon la notion, propose l'un de ces types (l'apprenant peut choisir) :
 ## 4. Évaluer
 
 Compare le résultat aux critères, point par point, honnêtement.
-- **Réussi** : la notion passe à **Maîtrisé** dans la grille, avec la date et la preuve (lien vers l'exercice ou résumé de l'explication).
+- **Réussi** : la notion passe à **Maîtrisé** dans la grille, avec la date, le projet et la preuve (lien vers l'exercice ou résumé de l'explication).
 - **Pas encore** : la notion reste au niveau Appliqué. Analyse avec lui ce qui a manqué (idée fausse, oubli, manque de pratique), note-le, et propose un nouveau défi plus tard. Ce n'est pas un échec : c'est une information.
 
 ## 5. Clôture
 
-Une question de métacognition ("qu'est-ce qui a été le plus difficile sans aide ?"), puis la mise à jour de `docs/progression.md`. Délègue à `archiviste` la synchronisation de la grille.
+Une question de métacognition ("qu'est-ce qui a été le plus difficile sans aide ?"), puis la mise à jour de `docs/progression.md`. Rappelle à l'apprenant de commiter et de pousser `.memoire/`, puis délègue à `archiviste` la synchronisation de la grille.
