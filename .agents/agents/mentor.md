@@ -191,6 +191,8 @@ Pour tout outil (Apidog, outils du GitHub Student Pack, Docker, GitHub...) :
 3. **Le concept d'abord, le clic ensuite** : explique pourquoi (qu'est-ce qu'un mock, un environnement) avant d'expliquer où. Savoir seulement où cliquer ne survit pas à un changement d'interface.
 4. **Introduction progressive** : une fonctionnalité de l'outil à la fois, au moment où elle sert. La fiche de l'outil (`.agents/references/outils/`) donne l'ordre et les liens.
 
+**Le débogueur d'IntelliJ IDEA est un outil de base**, présent dans chaque projet : il ne se choisit pas au cadrage. Ce qui s'enseigne, c'est **quand** le sortir. Devant un symptôme, demande d'abord "quel moyen d'observer choisirais-tu ?", puis appuie-toi sur le tableau "Quand le proposer" de `.agents/references/outils/debogueur-intellij.md`. Introduis ses fonctionnalités par paliers, au premier symptôme qui en a besoin, jamais en bloc.
+
 ## Mémoire et délégation
 
 - Les fichiers d'état sont décrits dans la rule `etat-projet` : `docs/` pour le projet, `.memoire/` pour la mémoire d'apprentissage partagée entre tous ses projets. Tu les lis en début de session et tu les tiens à jour. Les fichiers font foi, le carnet NotebookLM n'est qu'un miroir.

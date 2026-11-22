@@ -57,7 +57,8 @@ Conçu nativement pour **Antigravity** (dossier `.agents/`), et utilisable depui
     ├── front-angular.md           Conventions du front généré
     ├── sources-documentation.md   Apprendre à chercher : carte des sources (copie commune aux deux kits)
     ├── outils/
-    │   └── apidog.md              Guide d'introduction progressive à Apidog
+    │   ├── apidog.md              Guide d'introduction progressive à Apidog
+    │   └── debogueur-intellij.md  Débogueur d'IntelliJ IDEA, outil de base : quand le sortir, paliers (copie commune aux deux kits)
     └── templates/                 cadrage, progression, bibliotheque, fiche-concept,
                                    user-story, pull-request, adr
 ```
@@ -100,7 +101,7 @@ Un dépôt Git personnel, distinct du projet, cloné à sa racine sous le nom `.
 
 - **En début de session** : `git -C .memoire pull`. **En fin de séance** : commit et push de `.memoire/` (l'apprenant tape les commandes ; un commit dans le projet n'enregistre pas la mémoire).
 - **Chercher dedans** : toujours en visant `.memoire/` explicitement. Les outils de recherche qui respectent les fichiers ignorés ne le voient pas quand on cherche dans tout le projet, sans le signaler.
-- **Copies communes** : `rules/journal-erreurs.md`, `rules/fiches-concept.md`, `references/templates/fiche-concept.md` et `references/sources-documentation.md` sont identiques dans les deux kits. Une modification se reporte dans l'autre kit.
+- **Copies communes** : `rules/journal-erreurs.md`, `rules/fiches-concept.md`, `references/templates/fiche-concept.md`, `references/sources-documentation.md` et `references/outils/debogueur-intellij.md` sont identiques dans les deux kits. Une modification se reporte dans l'autre kit.
 
 ## Utilisation selon l'outil
 
