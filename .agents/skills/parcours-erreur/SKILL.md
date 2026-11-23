@@ -23,9 +23,7 @@ L'apprenant lit le message d'erreur **en entier** (en particulier la première l
 
 ## 4. Tester les hypothèses
 
-Fais-lui choisir le moyen d'observer : lire les logs, activer les logs SQL, poser un point d'arrêt, écrire un test qui reproduit le problème, réduire le cas au minimum. C'est ici qu'il construit sa **démarche** de débogage, une compétence en soi.
-
-**Choisir le moyen d'observer** : demande-lui d'abord lequel il choisirait, et pourquoi. Le tableau "Quand le proposer" de `.agents/references/outils/debogueur-intellij.md` dit quand le **débogueur** est le bon outil (mauvaise valeur sans exception, exception obscure, champ `null` après un mapping, test rouge incompris, cas qui ne touche qu'une donnée sur mille) et quand d'autres moyens passent avant (logs SQL, logs de démarrage, logs de l'outil). S'il choisit le débogueur pour la première fois, introduis le palier de la fiche qui correspond au symptôme, et seulement celui-là.
+Fais-lui choisir le moyen d'observer, et demande-lui pourquoi : lire les logs, activer les logs SQL, poser un point d'arrêt, écrire un test qui reproduit le problème, réduire le cas au minimum. Le tableau "Quand le proposer" de `.agents/references/outils/debogueur-intellij.md` dit quand le **débogueur** est le bon outil (mauvaise valeur sans exception, exception obscure, champ `null` après un mapping, test rouge incompris, cas qui ne touche qu'une donnée sur mille) et quand d'autres moyens passent avant (logs SQL, logs de démarrage, logs de l'outil) ; s'il choisit le débogueur pour la première fois, introduis seulement le palier de la fiche qui correspond au symptôme. C'est ici qu'il construit sa **démarche** de débogage, une compétence en soi.
 
 Pour une erreur de configuration ou de syntaxe (fichier Compose, propriétés Spring, changelog), le bon réflexe est souvent la documentation de référence de l'outil, dans la bonne version : donne la piste de recherche dosée selon la grille (`.agents/references/sources-documentation.md`), et demande "où as-tu cherché ?" s'il bloque.
 
